@@ -33,9 +33,9 @@
             // 
             // lbText
             // 
-            this.lbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbText.BackColor = System.Drawing.Color.Transparent;
             this.lbText.Location = new System.Drawing.Point(0, 0);
             this.lbText.Margin = new System.Windows.Forms.Padding(0);
@@ -44,7 +44,7 @@
             this.lbText.TabIndex = 0;
             this.lbText.Text = "Weak";
             this.lbText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
+            this.lbText.Click += new System.EventHandler(this.lbText_Click);
             // 
             // PasswordMeter
             // 

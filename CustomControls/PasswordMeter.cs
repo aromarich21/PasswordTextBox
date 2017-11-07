@@ -570,5 +570,10 @@ namespace CustomControls
             // Needed to ensure control is drawn correctly at start up.
             SetPassword("");
         }
+
+        private void lbText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

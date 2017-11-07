@@ -36,7 +36,7 @@ namespace CustomControls
 
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            base.OnKeyPress(e);
+            //base.OnKeyPress(e);
 
             int selectionStart = this.SelectionStart;
             int length = this.TextLength;
@@ -45,18 +45,18 @@ namespace CustomControls
             Keys keyModifed = (Keys)e.KeyChar;
 
             //Only accept a-z, A-Z and @
-            if (!Char.IsLetter(e.KeyChar) && e.KeyChar != '@')
+            if (!Char.IsLetterOrDigit(e.KeyChar) && e.KeyChar == 8 && !Char.IsSymbol(e.KeyChar))
             {
                 //Need to handle special keys like DELETE and BACK
-               if ((Keys.Back == keyModifed) || (Keys.Delete == keyModifed))
+                if ((Keys.Back == keyModifed) || (Keys.Delete == keyModifed))
                 {
                     DeleteSelectedCharacters(this, keyModifed);
-                    
+
                 }
                 e.Handled = true;
             }
             else
-            {                
+            {
                 if (selectedChars > 0)
                 {
                     //Need to remove the selected chars first
