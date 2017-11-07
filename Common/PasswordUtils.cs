@@ -197,22 +197,14 @@ namespace Common
 
         public static string GetPasswordStrengthText(int score)
         {
-            if (score < 2)
-            {
-                return String.Format("Too short ({0})", score);
-            }
-            else if (score < 60)
-            {
-                return String.Format("Weak ({0})", score);
-            }
-            else if (score < 80)
-            {
-                return String.Format("Good ({0})", score);
-            }
-            else
-            {
-                return String.Format("Strong ({0})", score);
-            }
+            if (score > 100) { score = 100; } 
+            else if (score < 0) { score = 0; }
+            if (score >= 0 && score < 20) { return String.Format("Very Weak ({0})", score);}
+            else if (score >= 20 && score < 40) { return String.Format("Weak ({0})", score); }
+            else if (score >= 40 && score < 60) { return String.Format("Good ({0})", score); }
+            else if (score >= 60 && score < 80) { return String.Format("Strong ({0})", score); }
+            else { return String.Format("Very Strong ({0})", score); }
+            
         }
 
         public static string Reverse(string s)
